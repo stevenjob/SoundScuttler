@@ -1,0 +1,16 @@
+{
+  "name": "soundscuttler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^2.1.0-beta.19",
+    "webpack-dev-server": "^2.1.0-beta.0"
+  }
+}
