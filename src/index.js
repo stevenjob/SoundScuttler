@@ -1,14 +1,14 @@
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { AppContainer } from 'react-hot-loader'
-import App from 'components/App'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import App from 'components/App';
 
 const rootElement = document.getElementById('root');
 
 ReactDOM.render(
   <AppContainer>
-    <App/>
+    <App />
   </AppContainer>,
   rootElement
 );
@@ -16,10 +16,11 @@ ReactDOM.render(
 // Hot Module Replacement API
 if (module.hot) {
   module.hot.accept('components/App', () => {
+    // eslint-disable-next-line global-require
     const NextApp = require('components/App').default;
     ReactDOM.render(
       <AppContainer>
-        <NextApp/>
+        <NextApp />
       </AppContainer>,
       rootElement
     );

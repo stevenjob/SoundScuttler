@@ -30,6 +30,7 @@ module.exports = {
     }]
   },
   resolve: {
+    root: path.resolve('./src'), // webpack 2 doesnt need this, this is here for eslint
     modules: [
       path.resolve(__dirname, 'src'),
       'node_modules'
@@ -38,5 +39,5 @@ module.exports = {
   },
   eslint: {
     configFile: './.eslintrc.js'
-  },
+  }
 };

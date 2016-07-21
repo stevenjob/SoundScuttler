@@ -1,16 +1,18 @@
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.config');
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
+const config = require('./webpack.config');
 
 new WebpackDevServer(webpack(config), {
   contentBase: './dist',
   publicPath: config.output.publicPath,
   hot: true,
   historyApiFallback: true
-}).listen(80, 'localhost', function (err, result) {
+}).listen(80, 'localhost', (err) => {
   if (err) {
-    return console.log(err);
+    // eslint-disable-next-line no-console
+    console.log(err);
+  } else {
+    // eslint-disable-next-line no-console
+    console.log('Listening at http://localhost:80/');
   }
-
-  console.log('Listening at http://localhost:80/');
 });
