@@ -1,7 +1,17 @@
 import React from 'react';
+import Stream from './Stream';
+
+const tracks = [
+  {
+    title: 'Some track'
+  },
+  {
+    title: 'Some other track'
+  }
+];
 
 const App = () => (
-  <div>Hello Sound Scuttler</div>
+  <Stream tracks={tracks} />
 );
 
 export default App;

@@ -13,5 +13,6 @@
 node_modules/
 /bin/
 npm-debug.log
+coverage
 dist/*
 !dist/index.html
