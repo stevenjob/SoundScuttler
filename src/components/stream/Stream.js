@@ -1,15 +1,19 @@
 import React, { PropTypes } from 'react';
 
-function Stream({ tracks = [], onAuth }) {
+function Stream({ user, tracks = [], onAuth }) {
   return (
     <div>
       <div>
-        <button onClick={onAuth} type="button">Login</button>
+        {
+          user ?
+            <div>{user.username}</div> :
+            <button onClick={onAuth} type="button">Login</button>
+        }
       </div>
       <br />
       <div>
       {
-        tracks.map((track, key) => (<div className="track" key={key}>{track.title}</div>))
+        tracks.map((track) => (<div className="track" key={`${track.title}-${track.id}`}>{track.title}</div>))
       }
       </div>
     </div>
@@ -18,7 +22,8 @@ function Stream({ tracks = [], onAuth }) {
 
 Stream.propTypes = {
   tracks: PropTypes.array,
-  onAuth: PropTypes.func.isRequired
+  onAuth: PropTypes.func.isRequired,
+  user: PropTypes.object
 };
 
 export default Stream;

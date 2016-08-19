@@ -1,6 +1,6 @@
-import { SET_TRACKS } from 'constants/actionTypes';
+import { TRACKS_SET } from 'constants/actionTypes';
 
 export const setTracks = (tracks) => ({
-  type: SET_TRACKS,
+  type: TRACKS_SET,
   tracks
 });

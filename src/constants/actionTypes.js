@@ -1,2 +1,3 @@
 
-export const SET_TRACKS = 'SET_TRACKS';
+export const ME_SET = 'ME_SET';
+export const TRACKS_SET = 'TRACKS_SET';

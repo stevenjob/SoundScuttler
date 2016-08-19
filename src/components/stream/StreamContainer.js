@@ -5,7 +5,9 @@ import Stream from './Stream';
 
 const mapStateToProps = (state) => {
   const tracks = state.tracks;
+  const { user } = state.auth;
   return {
+    user,
     tracks
   };
 };

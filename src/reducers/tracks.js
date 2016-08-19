@@ -1,5 +1,4 @@
-
-import { SET_TRACKS } from 'constants/actionTypes';
+import { TRACKS_SET } from 'constants/actionTypes';
 
 const initialState = [];
 
@@ -10,7 +9,7 @@ function setTracks(state, action) {
 
 const tracks = (state = initialState, action) => {
   switch (action.type) {
-    case SET_TRACKS:
+    case TRACKS_SET:
       return setTracks(state, action);
     default:
       return state;
