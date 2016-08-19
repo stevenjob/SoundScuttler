@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import tracks from './tracks';
+import { routerReducer as routing } from 'react-router-redux';
 
 const rootReducer = combineReducers({
-  tracks
+  tracks,
+  routing
 });
 
 export default rootReducer;
