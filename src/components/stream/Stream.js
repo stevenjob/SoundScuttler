@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 
 function Stream({ user, tracks = [], onAuth }) {
+  console.log(tracks);
   return (
     <div>
       <div>
@@ -13,7 +14,8 @@ function Stream({ user, tracks = [], onAuth }) {
       <br />
       <div>
       {
-        tracks.map((track) => (<div className="track" key={`${track.title}-${track.id}`}>{track.title}</div>))
+        // TODO key={key} is not great
+        tracks.map((track, key) => (<div className="track" key={key}>{track.origin.title}</div>))
       }
       </div>
     </div>
