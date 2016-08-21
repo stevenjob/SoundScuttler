@@ -1,6 +1,6 @@
 import { CLIENT_ID, REDIRECT_URI } from 'constants/auth';
 import { ME_SET } from 'constants/actionTypes';
-import { setTracks } from 'actions/tracks';
+import { setTracks } from 'actions/track';
 import SC from 'soundcloud';
 
 const setMe = (user) => ({

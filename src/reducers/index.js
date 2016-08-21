@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
-import tracks from './tracks';
+import track from './track';
 import auth from './auth';
 import { routerReducer as routing } from 'react-router-redux';
 
 const rootReducer = combineReducers({
   auth,
-  tracks,
+  track,
   routing
 });
 
