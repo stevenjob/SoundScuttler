@@ -17,7 +17,7 @@
     },
     "production": {
       "presets": [
-        "es2015-native-modules",
+        ["es2015", { "modules": false }],
         "stage-0",
         "react"
       ]
