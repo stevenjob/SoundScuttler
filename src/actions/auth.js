@@ -12,7 +12,7 @@ const fetchStream = (me, session) => (dispatch) => {
   fetch(`//api.soundcloud.com/me/activities?limit=20&offset=0&oauth_token=${session.oauth_token}`)
     .then((response) => response.json())
     .then((data) => {
-      dispatch(setTracks(data.collection));
+      dispatch(setTracks(data.collection.filter((track) => track.origin)));
     });
 };
 
