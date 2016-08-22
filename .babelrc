@@ -13,7 +13,7 @@
         "stage-0",
         "react"
       ],
-      "plugins": ["react-hot-loader/babel"]
+      "plugins": ["transform-es3-member-expression-literals", "transform-es3-property-literals", "react-hot-loader/babel"]
     },
     "production": {
       "presets": [

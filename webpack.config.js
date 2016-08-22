@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'eval',
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:80',
+    'webpack-dev-server/client?http://0.0.0.0:80',
     'webpack/hot/only-dev-server',
     './src/index'
   ],
@@ -27,6 +27,10 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel'
+    }, {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'es3ify-loader'
     }]
   },
   resolve: {
