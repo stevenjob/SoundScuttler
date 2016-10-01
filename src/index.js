@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer as HotLoaderContainer } from 'react-hot-loader';
-import App from 'components/app/AppContainer';
+import App from 'components/app/App';
 
 const rootElement = document.getElementById('root');
 
@@ -15,9 +15,9 @@ ReactDOM.render(
 
 // Hot Module Replacement API
 if (module.hot) {
-  module.hot.accept('components/app/AppContainer', () => {
+  module.hot.accept('components/app/App', () => {
     // eslint-disable-next-line global-require
-    const NextApp = require('components/app/AppContainer').default;
+    const NextApp = require('components/app/App').default;
     ReactDOM.render(
       <HotLoaderContainer>
         <NextApp />
