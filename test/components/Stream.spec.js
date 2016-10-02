@@ -1,7 +1,7 @@
-import Stream from '../../src/components/stream/Stream';
+import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import React from 'react';
+import Stream from '../../src/components/stream/Stream';
 
 describe('Stream', () => {
   const props = {

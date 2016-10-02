@@ -5,6 +5,7 @@ import { CLIENT_ID } from 'constants/auth';
 class Stream extends Component {
 
   componentDidUpdate() {
+    // eslint-disable-next-line
     const audioElement = ReactDOM.findDOMNode(this.refs.audio);
 
     if (!audioElement) { return; }
@@ -27,31 +28,41 @@ class Stream extends Component {
           {
             user ?
               <div>{user.username}</div> :
-              <button onClick={onAuth} type="button">Login</button>
+              <button
+                onClick={onAuth}
+                type="button"
+              >
+                Login
+              </button>
           }
         </div>
         <br />
         <div>
-        {
-          tracks.map((track) => (
-            <div
-              className="track"
-              key={track.origin.id}
-            >
-              {track.origin.title}
-              <button
-                type="button"
-                onClick={() => onPlay(track)}
+          {
+            tracks.map((track) => (
+              <div
+                className="track"
+                key={track.origin.id}
               >
-                Play
-              </button>
-            </div>)
-          )
-        }
+                {track.origin.title}
+                <button
+                  type="button"
+                  onClick={() => onPlay(track)}
+                >
+                  Play
+                </button>
+              </div>
+            ))
+          }
         </div>
         {
           activeTrack ?
-            <audio id="audio" ref="audio" src={`${activeTrack.origin.stream_url}?client_id=${CLIENT_ID}`}></audio> :
+            <audio
+              id="audio"
+              // eslint-disable-next-line
+              ref="audio"
+              src={`${activeTrack.origin.stream_url}?client_id=${CLIENT_ID}`}
+            /> :
             null
         }
       </div>
@@ -60,11 +71,11 @@ class Stream extends Component {
 }
 
 Stream.propTypes = {
-  tracks: PropTypes.array,
+  activeTrack: PropTypes.object,
   onAuth: PropTypes.func.isRequired,
   onPlay: PropTypes.func.isRequired,
-  user: PropTypes.object,
-  activeTrack: PropTypes.object
+  tracks: PropTypes.array,
+  user: PropTypes.object
 };
 
 export default Stream;

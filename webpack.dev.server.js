@@ -1,4 +1,6 @@
+// eslint-disable-next-line
 const webpack = require('webpack');
+// eslint-disable-next-line
 const WebpackDevServer = require('webpack-dev-server');
 const config = require('./webpack.config');
 

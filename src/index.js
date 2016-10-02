@@ -18,6 +18,7 @@ if (module.hot) {
   module.hot.accept('components/app/App', () => {
     // eslint-disable-next-line global-require
     const NextApp = require('components/app/App').default;
+
     ReactDOM.render(
       <HotLoaderContainer>
         <NextApp />

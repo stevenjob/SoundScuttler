@@ -5,10 +5,19 @@ import Callback from 'components/callback/Callback';
 import Container from './Container';
 
 const routes = (
-  <Route path="/" component={Container}>
+  <Route
+    path="/"
+    component={Container}
+  >
     <IndexRoute component={Stream} />
-    <Route path="/" component={Stream} />
-    <Route path="/callback" component={Callback} />
+    <Route
+      path="/"
+      component={Stream}
+    />
+    <Route
+      path="/callback"
+      component={Callback}
+    />
   </Route>
 );
 
