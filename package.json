@@ -6,10 +6,7 @@
   "scripts": {
     "start": "node webpack.dev.server.js",
     "lint": "eslint .",
-    "lint-fix": "eslint --fix .",
-    "test": "cross-env BABEL_ENV=test mocha --compilers js:babel-register --recursive",
-    "test:watch": "npm test -- --watch",
-    "test:cov": "cross-env BABEL_ENV=test babel-node node_modules/isparta/bin/isparta cover --report text --report html node_modules/mocha/bin/_mocha -- --recursive"
+    "lint-fix": "eslint --fix ."
   },
   "author": "Steven Job",
   "license": "WTFPL",
