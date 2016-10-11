@@ -4,11 +4,13 @@ module.exports = {
     browser: true
   },
   'plugins': [
-    'react'
+    'react',
+    'flowtype'
   ],
   'extends': [
     'eslint-config-airbnb-base',
     'eslint:recommended',
+    "plugin:flowtype/recommended",
     'plugin:react/all'
   ],
   settings: {
@@ -33,6 +35,7 @@ module.exports = {
     'react/forbid-prop-types': 'warn',
     'react/require-optimization': 'off',
     'react/jsx-no-literals': 'warn',
-    "import/no-extraneous-dependencies": 'warn'
+    "import/no-extraneous-dependencies": 'warn',
+    "import/prefer-default-export": 'warn'
   }
 }

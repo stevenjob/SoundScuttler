@@ -1,3 +1,4 @@
+// @flow
 import { CLIENT_ID, REDIRECT_URI } from 'constants/auth';
 import { ME_SET } from 'constants/actionTypes';
 import { setTracks } from 'actions/track';
@@ -8,15 +9,15 @@ const setMe = (user) => ({
   user
 });
 
-const fetchStream = (me, session) => (dispatch) => {
+const fetchStream = (me, session) => (dispatch: Function) => {
   fetch(`//api.soundcloud.com/me/activities?limit=20&offset=0&oauth_token=${session.oauth_token}`)
     .then((response) => response.json())
-    .then((data) => {
-      dispatch(setTracks(data.collection.filter((track) => track.origin)));
-    });
+    .then((data: StreamData) => (
+      dispatch(setTracks(data.collection.filter((track) => (track.origin))))
+    ));
 };
 
-export const auth = () => (dispatch) => {
+export const auth = () => (dispatch: Function) => {
   SC.initialize({ client_id: CLIENT_ID, redirect_uri: REDIRECT_URI });
   SC.connect().then((session) => {
     fetch(`//api.soundcloud.com/me?oauth_token=${session.oauth_token}`)

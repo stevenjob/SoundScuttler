@@ -1,3 +1,4 @@
+// @flow
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { CLIENT_ID } from 'constants/auth';

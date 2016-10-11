@@ -1,4 +1,14 @@
+// @flow
 import { TRACKS_SET, TRACK_PLAY } from 'constants/actionTypes';
+
+type Track = {
+  // specify your track object
+};
+
+type State = {
+  tracks: Array<Track>;
+  activeTrack: ?Track;
+};
 
 const initialState = {
   tracks: [],
@@ -15,7 +25,7 @@ function setPlay(state, action) {
   return { ...state, activeTrack: track };
 }
 
-const track = (state = initialState, action) => {
+const track = (state: State = initialState, action: Object) : State => {
   switch (action.type) {
     case TRACKS_SET:
       return setTracks(state, action);

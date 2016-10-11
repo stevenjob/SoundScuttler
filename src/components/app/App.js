@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';

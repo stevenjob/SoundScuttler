@@ -1,0 +1,6 @@
+[ignore]
+  .*/node_modules/fbjs/.*
+[libs]
+  decls/
+[options]
+  module.name_mapper='^\(actions\|components\|constants\|reduces\|selectors\|store\)\/\(.*\)$' -> '<PROJECT_ROOT>/src/\1/\2'
