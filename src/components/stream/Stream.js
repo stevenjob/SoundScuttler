@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { CLIENT_ID } from 'constants/auth';
+import { observer } from 'mobx-react';
 
+@observer
 class Stream extends Component {
 
   componentDidUpdate() {

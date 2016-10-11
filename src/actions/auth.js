@@ -1,29 +1,26 @@
-import { CLIENT_ID, REDIRECT_URI } from 'constants/auth';
-import { ME_SET } from 'constants/actionTypes';
-import { setTracks } from 'actions/track';
 import SC from 'soundcloud';
+import userStore from 'store/userStore';
+import trackStore from 'store/trackStore';
 
-const setMe = (user) => ({
-  type: ME_SET,
-  user
-});
+export default function auth() {
+  SC.connect().then((session) => {
+    fetchMe(session);
+    fetchStream(session);
+  });
+}
 
-const fetchStream = (me, session) => (dispatch) => {
+function fetchMe(session) {
+  fetch(`//api.soundcloud.com/me?oauth_token=${session.oauth_token}`)
+    .then((response) => response.json())
+    .then((me) => {
+      userStore.setMe(me);
+    });
+}
+
+function fetchStream(session) {
   fetch(`//api.soundcloud.com/me/activities?limit=20&offset=0&oauth_token=${session.oauth_token}`)
     .then((response) => response.json())
     .then((data) => {
-      dispatch(setTracks(data.collection.filter((track) => track.origin)));
+      trackStore.setTracks(data.collection.filter((track) => track.origin));
     });
-};
-
-export const auth = () => (dispatch) => {
-  SC.initialize({ client_id: CLIENT_ID, redirect_uri: REDIRECT_URI });
-  SC.connect().then((session) => {
-    fetch(`//api.soundcloud.com/me?oauth_token=${session.oauth_token}`)
-      .then((response) => response.json())
-      .then((me) => {
-        dispatch(setMe(me));
-        dispatch(fetchStream(me, session));
-      });
-  });
-};
+}

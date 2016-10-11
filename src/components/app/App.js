@@ -1,20 +1,19 @@
 import React from 'react';
+import SC from 'soundcloud';
 import { Router, browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
-import { Provider } from 'react-redux';
-import configureStore from 'store/configureStore';
+import { useStrict } from 'mobx';
+import { CLIENT_ID, REDIRECT_URI } from 'constants/auth';
 import routes from './routes';
 
-const store = configureStore();
-const history = syncHistoryWithStore(browserHistory, store);
+SC.initialize({ client_id: CLIENT_ID, redirect_uri: REDIRECT_URI });
+
+useStrict(true);
 
 const App = () => (
-  <Provider store={store}>
-    <Router
-      history={history}
-      routes={routes}
-    />
-  </Provider>
+  <Router
+    history={browserHistory}
+    routes={routes}
+  />
 );
 
 export default App;

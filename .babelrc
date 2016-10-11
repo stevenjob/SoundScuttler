@@ -5,6 +5,10 @@
         "es2015",
         "stage-0",
         "react"
+      ],
+      "plugins": [
+        "transform-decorators-legacy",
+        "transform-class-properties"
       ]
     },
     "development": {
@@ -13,13 +17,21 @@
         "stage-0",
         "react"
       ],
-      "plugins": ["react-hot-loader/babel"]
+      "plugins": [
+        "react-hot-loader/babel",
+        "transform-decorators-legacy",
+        "transform-class-properties"
+      ]
     },
     "production": {
       "presets": [
         ["es2015", { "modules": false }],
         "stage-0",
         "react"
+      ],
+      "plugins": [
+        "transform-decorators-legacy",
+        "transform-class-properties"
       ]
     }
   }
